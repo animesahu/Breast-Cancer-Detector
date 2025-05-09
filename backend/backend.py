@@ -57,6 +57,10 @@ except FileNotFoundError:
 # ==================
 # Flask Route for Image Analysis
 # ==================
+@app.route('/')
+def home():
+    return 'Hello, world! Backend is running.'
+    
 @app.route('/analyze', methods=['POST']) # This is the endpoint your frontend will call
 def analyze_image_route():
     if not loaded_model:
