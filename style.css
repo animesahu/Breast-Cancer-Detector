@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --success-color: #28a745; /* Green */
+    --danger-color: #dc3545; /* Red */
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --background-color: #eef2f7;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: transparent; /* Container is just for layout */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+header .subtitle {
+    font-size: 1.1em;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-color-light, #e0e0e0);
+    padding-bottom: 10px;
+}
+
+/* File Input Styling */
+.file-input-wrapper {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.file-input {
+    width: 0.1px; /* Hide the default input */
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 500;
+    color: white;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+    background-color: var(--dark-color);
+}
+
+.file-input-label span {
+    vertical-align: middle;
+}
+
+/* Image Preview */
+.image-preview-container {
+    margin-top: 20px;
+    text-align: center;
+    min-height: 150px; /* So it doesn't collapse */
+    border: 2px dashed #ccc;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    background-color: var(--light-color);
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius);
+    display: none; /* Hidden by default */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.file-name {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+    word-break: break-all;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #a0c7e8; /* Lighter, inactive blue */
+    cursor: not-allowed;
+}
+
+/* Result Display */
+#resultDisplay {
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+    min-height: 50px;
+}
+
+#resultText {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.result-cancerous {
+    background-color: #ffebee; /* Light red */
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+}
+
+.result-non-cancerous {
+    background-color: #e8f5e9; /* Light green */
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+}
+
+.result-default {
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+    border: 1px solid #ddd;
+}
+
+
+/* Loader */
+.loader {
+    border: 6px solid var(--light-color);
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* About Section */
+#about-section h3 {
+    color: var(--secondary-color);
+    margin-top: 20px;
+}
+#about-section ol {
+    padding-left: 20px;
+}
+#about-section ol li {
+    margin-bottom: 8px;
+}
+.disclaimer {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404; /* Dark yellow */
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+.disclaimer strong {
+    color: var(--danger-color);
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    .card {
+        padding: 20px;
+    }
+}

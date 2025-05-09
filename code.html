@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FNA Cytopathology Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔬 FNA Cytopathology Image Analyzer</h1>
+            <p class="subtitle">Upload an FNA slide image (JPG) to predict tumor status.</p>
+        </header>
+
+        <main>
+            <section id="upload-section" class="card">
+                <h2>Upload Image</h2>
+                <div class="file-input-wrapper">
+                    <input type="file" id="imageUpload" accept="image/jpeg, image/jpg" class="file-input">
+                    <label for="imageUpload" class="file-input-label">
+                        <span>🖼️ Choose Image</span>
+                    </label>
+                </div>
+                <div id="image-preview-container" class="image-preview-container">
+                    <img id="imagePreview" src="#" alt="Image Preview" />
+                    <p id="fileName" class="file-name"></p>
+                </div>
+                <button id="analyzeButton" disabled>Analyze Image</button>
+            </section>
+
+            <section id="result-section" class="card">
+                <h2>Analysis Result</h2>
+                <div id="loader" class="loader" style="display: none;"></div>
+                <div id="resultDisplay">
+                    <p id="resultText">Awaiting image analysis...</p>
+                </div>
+            </section>
+
+            <section id="about-section" class="card">
+                <h2>About This Tool</h2>
+                <p>
+                    This tool is designed to assist in the preliminary analysis of Fine Needle Aspiration (FNA) cytopathology images.
+                    It accepts a JPG image of an FNA slide and uses a backend machine learning model to predict whether
+                    the cells in the image indicate a cancerous or non-cancerous tumor.
+                </p>
+                <h3>How it Works:</h3>
+                <ol>
+                    <li><strong>Upload:</strong> Select a clear JPG image of an FNA cytopathology slide.</li>
+                    <li><strong>Analysis:</strong> The image is sent to our secure backend server. A pre-trained deep learning model processes the image features.</li>
+                    <li><strong>Result:</strong> The model outputs a prediction: '1' for cancerous, '0' for non-cancerous. This result is then displayed back to you.</li>
+                </ol>
+                <h3>Technology:</h3>
+                <p>
+                    The frontend is built with HTML, CSS, and JavaScript. The backend (which you'll connect this to)
+                    likely employs a Convolutional Neural Network (CNN) or similar image analysis model, potentially built with
+                    frameworks like TensorFlow or PyTorch.
+                </p>
+                <p class="disclaimer">
+                    <strong>⚠️ Disclaimer:</strong> This tool is for educational and demonstrational purposes only.
+                    It is <strong>NOT</strong> a substitute for professional medical advice, diagnosis, or treatment.
+                    Always seek the advice of your physician or other qualified health providers with any questions
+                    you may have regarding a medical condition. Never disregard professional medical advice or delay
+                    in seeking it because of something you have read or seen on this tool.
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Your Project Name. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
