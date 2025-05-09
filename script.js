@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // --- ACTUAL BACKEND CALL ---
-            const response = await fetch('https://breast-cancer-detector-backend.onrender.com', { // <-- IMPORTANT: URL updated
+            const response = await fetch('https://breast-cancer-detector-backend.onrender.com/analyze', { // <-- IMPORTANT: URL updated
                 method: 'POST',
                 body: formData // formData already contains the image with key 'image'
             });
